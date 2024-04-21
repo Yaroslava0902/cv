@@ -1,0 +1,147 @@
+# Practica 1
+print("Practica 1")
+print("Variant 26, Tunisvirus fontaine2")
+print("Zavdannya 2")
+Text = "ATGGCTACCACACCGTTACGAAACACTACTATTTTCAATATTTCATTGAAAGCTGAATTTATCGAACCCATTGTATGGGATGGAAAGTTTGGTTGCCCTCTTTGCTCCTTTGAAGGGAAGGATGAAGGAGACCTCAAAAAACATTATCAGTCTGAAGAACATCGCGAGACATACGTCTCAGCATGCAAAAGTCCCGCATCGACGTCCTCTTTCTACGACATAGGGAGCGACGAGACCGAACACGAGTACACAAAGAGAACGAGTCTCGCTTACAACATTGGTGTTCTTCCATCTTATCTTTTGGTCACAGAAAAATACGGAACTTTGTGGTTTTCTCATGGTTTGAGAAAGGCAAACAAAAACTCGTTGTCTTCCAGAGAGAAGAGAGGGGAAGTCGGTCTTTTGACTCCTCAACAATACGCTCACAGACTTGGAAGAGCCTTGGGTCATGAGATGTTCTTTGCATACGAGACTGGAAAGTTTTCGAGGTCTTTTGGGAGTTACCATTCATTCTCTAGCTTTTGGGAAAACTATGGGAAAGTACCGCACAACAAAAAGCATTTCCATGAACAGTTTCTTGAGGGACATGCGTGTCGAGAAATCTTTGACTTGGATAGTTCAAGCCTTTCAAAAGAGGAAGCAGAAAAGCTCGACATTCCTCAACTTTTTATGAAGTTGAGACAAGAATTCGAGAACGATACAAAACTCAAGTTTTTTGTTGTTGAGGCATGCGGCCAAGAAGAAAATAAATACAAAGTATCCTACCACATCATCGCCTCAAAAGTATATCAAGACATCGTCCACGTCGGAAAATTCGCCAAAGAGTTTGTCTCGTTTCTTGAAAAGACAAAAGAAGGAAGCCTTTTAGCAAGTCTGATAGACAAACAAATTTATACCAAAAACCGAACCATTCGTTGCCCTTGGAGTATAAAACACGAGAATAAAAGGAGACTTGTCCCAATCAAAGAACAGATGAATTTGGACCCCGCCAACTTTTTTGCGACACCTGATGCTTATTTTTGGGGAGAGGAAGATTCTGAAGAGAAAGAAGAGAAAGAGACAAAAATCTTTTCCACATCAAACGACTATGAAGAAGTTCTTGCCGACTTTGTGGAACAAAAACTCCAAGTGTTTCAAATCCACAGAAAGGGGAATGGATGGTTTCTCCAAAGAGACAAAGACGAGGTGAATCTTTGCCCTATTTGTGAAAGAGAACACGAAGGAGACAACTACAGTGCATACGTCAAGTATGGGAGACTTTGGCTTTATTGTTTCCGGGCGGAGAAGTCGATGGCATTGACGAGTGCTCCGAAAGACAAAAAGAGAGAAATATATGCCATCAGAAAAGTCCCAGAACTCAAGGCAGATTTTTGTTATGATTCGCGGATTTCGAGACCTGTGATGTTCAATCACGGAAAGAAATGTCTCGCTATTCGAGGAGCTATGGGAACTGGAAAAACAAAGGCTCTTGCTTTATATCTAAAGTTTCATCCGCACGCTCGCGTTTTGAGCGTCACGTATAGAAGAACACTGGCACGAGAAACATCAGAGAATCTTTATGGGTTCGTCAACTATGAAGACGCAGGAAAAGGATGGCTTTGCGCAAAGAGACTCGCCGTTCAAGTCGACTCTTTGCATCGCGTTTTTGGAAAATTTGACCTATTAGTTTTGGATGAAGTGACCTATACTTTGTCTCGTCTCTTTTGTGATGTCTCGGAAAAAAATGGTTGTTGGGGAACACTCAAACATTTTATCGGGACGAGTAAAAATATTCTTTTGTTGGATAAAAATCTTGACCAGTCTACCATCAACTTGTTTGAGGAACTCAATGTCCCATGTTTTGTGATGAGGAACGAATTCAAAGCTCATAAGAACAAGAAGCTCTTGGTCTCCCCAACATTCCTCGAGTTCAAGGAGAAGCTCTTGGGTGAACTTGCAAATGGTAAGAAAATATGCTTTCCTTGCAGCTCAAAGAAGAAACTTTTGCTTGTGTGCCGAGAGGCGCAAGAACTTGGATATAAAGTTCTTTGGTATACCGGAGAAGGAAAGAGCGAAGATGCTTGGTTAGAGCAGTGGGATGAGTATGATTTGGTCGCCTATACACCCACAATTTCAGCTGGAGTAAGCTACGAACAAGAGCATTTTGACAAGGTATACGGGTATTTTAGTTCTCACTCTTGTTGTGCCGAAGAGGCAGAGCAAATGTTATTTCGCGTTCGAAACATCGCAGACAACGAAGTGGTTCTCGCCTTTGACAATAGGTACATGAACCTTCCCGTGACGAAAGAAGAGGTCATCAAAAACATCGAGGCAAGAGACAGTTCCTCGTTTGCCTTGTCCGGGATAGAATGGGACATTACCGCCGGTAAAATGATGGACAGTCCGAGGTCGAGAGCTCATGTCGAGTCCATCATCAAAAGAAACGTCTCCAAGAACAACATCTCTGGTACACTTCTCGGACTTTTGGAAGAGCAAGGAATGGTCACCGAGTATCTCTCACCAGAAATTCGAGGACAAGAACTCAAGGCTCTAAGAGAGGACACAAAGTTTTTGGAAAAGAAAATACAAACGGAAGATGCAGTCAAAGTCTGTGAAGCTCCATCCATCACGAGGCCTGAGTTTTCTTTTCTTTGTAATCTGAGAGACAAGACGAATGAAGAAATTTCTTCGTGTCAAAAGTTTATGATGTCGTACAAGTTCGGGATTGAGCAAGAGGTTTTGACGCCAGAATTTGTCCTTGAATATTCTGGGAAAGAGAAAATCTTTGAGAACCAGAGTCTTGCATTCTGTGGTTCAAAAGCTGAACAAAAAGAGAGGCTTGCTGATTTGCTCGAACGGAAAAACAACGAGAAGAAAGATATCAAAGCAAGCAAACGCATTGGTATGTCGTGCAACCTCGAAAAGGTTGTGTACGCAAGAAGATTATTTTACTGGCTTGGGTATGGAAGTACAACAACGAGAGAGAAAAAGAGTAAAGAAGAAATGTCAGCGAGACTCGGAAAGATAAGGGACAAGATAAAAAAGAGCAGGCACTTTCAGGAACTTTTGGGAAAGATACCAGAGGAAGAAAAATTTATGGTCAAGTACATCAATGGGATACTAAGACGGATGTTTGACTGCTACATCGCGAGAACGAGTAGGAAAGCTAATTTCTTTTGGGAGTTGGTCTTTTGTTCGCCATGGAAACACGGGGATGAAATAACTCCAATCCCAAAAAAGAAGGTACGCTTGTTAGAGATAATAGCGAACCCATTCTAG "
+k = 14
+l =len(Text)
+print("Dovghina = ",l)
+print("Zavdannya 3")
+def FrequencyMap(Text,k):
+    freq = {}
+    n = len(Text)
+    for i in range(n-k+1):
+        Pattern = Text[i:i+k]
+        freq[Pattern] = 0
+        for i in range(n-k+1):
+            if Text[i:i+k] == Pattern:
+                freq[Pattern] = freq[Pattern]+1
+    return freq
+print("k-мери, яких є найбільше в послідовності = ", FrequencyMap(Text,k))
+print("Zavdannya 4")
+def FrequentWords(Text,k):
+    word = []
+    freq = FrequencyMap(Text,k)
+    m = max(freq.values())
+    for key in freq:
+        if freq[key]==m:
+            Pattern = key
+            word.append(Pattern)
+    return word
+print( "Список, який містить найбільш поширені k-mers в послідовності = ", FrequentWords(Text,k))
+import numpy as np
+
+# Задані параметри
+gap_penalty = -7
+match_score = 2
+mismatch_penalty = -5
+
+# Послідовності
+seq1 = "TTTTACTTACA"
+seq2 = "GGGGTACTA"
+
+# Створення матриці для вирівнювання з нулями
+num_rows = len(seq1) + 1
+num_cols = len(seq2) + 1
+score_matrix = np.zeros((num_rows, num_cols), dtype=int)
+
+# Заповнення матриці за допомогою алгоритму Needleman-Wunsch
+for i in range(1, num_rows):
+    for j in range(1, num_cols):
+        if seq1[i - 1] == seq2[j - 1]:
+            diagonal_score = score_matrix[i - 1][j - 1] + match_score
+        else:
+            diagonal_score = score_matrix[i - 1][j - 1] + mismatch_penalty
+        up_score = score_matrix[i - 1][j] + gap_penalty
+        left_score = score_matrix[i][j - 1] + gap_penalty
+        score_matrix[i][j] = max(diagonal_score, up_score, left_score)
+
+# Вирівнювання послідовностей
+aligned_seq1 = ""
+aligned_seq2 = ""
+i, j = num_rows - 1, num_cols - 1
+
+while i > 0 or j > 0:
+    current_score = score_matrix[i][j]
+    if i > 0 and score_matrix[i - 1][j] + gap_penalty == current_score:
+        aligned_seq1 = seq1[i - 1] + aligned_seq1
+        aligned_seq2 = "-" + aligned_seq2
+        i -= 1
+    elif j > 0 and score_matrix[i][j - 1] + gap_penalty == current_score:
+        aligned_seq1 = "-" + aligned_seq1
+        aligned_seq2 = seq2[j - 1] + aligned_seq2
+        j -= 1
+    else:
+        aligned_seq1 = seq1[i - 1] + aligned_seq1
+        aligned_seq2 = seq2[j - 1] + aligned_seq2
+        i -= 1
+        j -= 1
+
+# Виведення результатів
+print("Послідовність 1:", aligned_seq1)
+print("Послідовність 2:", aligned_seq2)
+import numpy as np
+
+# Задані параметри
+gap_penalty = -7
+match_score = 2
+mismatch_penalty = -5
+
+# Послідовності
+seq1 = "TTTTACTTACA"
+seq2 = "GGGGTACTA"
+
+# Створення матриці для локального вирівнювання з нулями
+num_rows = len(seq1) + 1
+num_cols = len(seq2) + 1
+score_matrix = np.zeros((num_rows, num_cols), dtype=int)
+
+# Змінні для збереження позиції максимального значення в матриці
+max_score = 0
+max_i, max_j = 0, 0
+
+# Заповнення матриці за допомогою алгоритму Smith-Waterman
+for i in range(1, num_rows):
+    for j in range(1, num_cols):
+        if seq1[i - 1] == seq2[j - 1]:
+            diagonal_score = score_matrix[i - 1][j - 1] + match_score
+        else:
+            diagonal_score = score_matrix[i - 1][j - 1] + mismatch_penalty
+        up_score = score_matrix[i - 1][j] + gap_penalty
+        left_score = score_matrix[i][j - 1] + gap_penalty
+        score_matrix[i][j] = max(0, diagonal_score, up_score, left_score)
+
+        # Оновлення позиції максимального значення
+        if score_matrix[i][j] > max_score:
+            max_score = score_matrix[i][j]
+            max_i, max_j = i, j
+
+# Вирівнювання послідовностей з максимальної позиції
+aligned_seq1 = ""
+aligned_seq2 = ""
+i, j = max_i, max_j
+
+while i > 0 and j > 0 and score_matrix[i][j] > 0:
+    current_score = score_matrix[i][j]
+    if seq1[i - 1] == seq2[j - 1]:
+        aligned_seq1 = seq1[i - 1] + aligned_seq1
+        aligned_seq2 = seq2[j - 1] + aligned_seq2
+        i -= 1
+        j -= 1
+    elif current_score == score_matrix[i - 1][j - 1] + mismatch_penalty:
+        aligned_seq1 = seq1[i - 1] + aligned_seq1
+        aligned_seq2 = seq2[j - 1] + aligned_seq2
+        i -= 1
+        j -= 1
+    elif current_score == score_matrix[i - 1][j] + gap_penalty:
+        aligned_seq1 = seq1[i - 1] + aligned_seq1
+        aligned_seq2 = "-" + aligned_seq2
+        i -= 1
+    else:
+        aligned_seq1 = "-" + aligned_seq1
+        aligned_seq2 = seq2[j - 1] + aligned_seq2
+        j -= 1
+
+# Виведення результатів
+print("Послідовність 1:", aligned_seq1)
+print("Послідовність 2:", aligned_seq2)
