@@ -1,0 +1,72 @@
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{ float x1,x2,x3,x4,x5,x6,x7,x8,x9;
+  float H,p,b,v,d,s,n,k,g,m,o,z;
+  cout<< " vvedit nerozpodileny pribl proshlux let ";
+  cin>>p;
+   cout<< " vvedit balanc ";
+  cin>>b;
+x1=p/b;
+cout<< "x1=" << x1 <<endl;
+
+
+cout<< " vvedit vurychka (netto) ot realizazii ";
+  cin>>v;
+x2=v/b;
+cout<< "x2=" << x2 <<endl;
+
+cout<< " vvedit pribl do nalogooblogeniya ";
+  cin>>d;
+   cout<< " vvedit sobstvennuy kapital ";
+  cin>>s;
+x3=d/s;
+cout<< "x3=" << x3 <<endl;
+
+ cout<< " vvedit denezhnuy potok ";
+  cin>>n;
+   cout<< " vvedit obyazatelstva korotkostrochnue ";
+  cin>>k;
+cout<< " vvedit obyazatelstva dolgosrochnue ";
+  cin>>g;
+x4=n/(k+g);
+cout<< "x4=" << x4 <<endl;
+
+
+x5=g/b;
+cout<< "x5=" << x5 <<endl;
+
+
+x6=k/b;
+cout<< "x6=" << x6 <<endl;
+
+cout<< " vvedit materialnue aktivu ";
+  cin>>m;
+x7=log10(m);
+cout<< "x7=" << x7 <<endl;
+
+cout<< " vvedit oborotnuy kapital ";
+  cin>>o;
+x8=o/(k+g);
+cout<< "x8=" << x8 <<endl;
+
+cout<< " vvedit prozentu k uplate ";
+  cin>>z;
+x9=log10((d+z)/z);
+cout<< "x9=" << x9 <<endl;
+
+H= 5.528*x1+0.212*x2+0.073*x3+1.270*x4-0.120*x5+2.335*x6+0.575*x7+1.083*x8+0.894*x9-3.075;
+
+cout<< "H=" <<H<< endl;
+
+
+
+if (H>0){cout << "vashe pidpruemstvo prozvitaet"<<endl;}
+else {cout << "na zhal vasha firma bankrot"<<endl;}
+
+return 0;
+}
